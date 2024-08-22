@@ -25,9 +25,8 @@ public class BattleManagerScript : MonoBehaviour
         //TODO: This is placeholder. Ideally player currentHealth will be constant,
         //enemy currentHealth will be set based on the encounter. For testing purposes, this is fine.
         player.priority = true;
-        player.currentHealth = 100;
-        enemy.currentHealth = 20;
-        enemy.maxHealth = 20;
+        player.currentHealth = player.maxHealth;
+        enemy.currentHealth = enemy.maxHealth;
         playerHealthUI.maxValue = player.maxHealth;
         playerHealthUI.value = player.currentHealth;
         enemyHealthUI.maxValue = enemy.currentHealth;

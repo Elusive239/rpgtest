@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class MoveButtonScript : MonoBehaviour
+public class MoveFill : MonoBehaviour
 {
     public Entity player;
     public Entity enemy;
@@ -25,7 +25,7 @@ public class MoveButtonScript : MonoBehaviour
         }
     }
     //enemy takes damage based on the selection, then player passes priority
-    public void onOptionSelect(){
+    public void OnOptionSelect(){
         enemy.TakeDamage(attack.damage);
         player.priority = false;
     }

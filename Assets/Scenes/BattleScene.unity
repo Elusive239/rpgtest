@@ -1801,11 +1801,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 947925352}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8754f9ac04c773245a9aad6731b27b0b, type: 3}
+  m_Script: {fileID: 11500000, guid: 832a0bea4e9ab7949bc925122954e88b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnemyHP: 100
-  EnemyHPSlider: {fileID: 1841495241}
+  health: 100
+  slider: {fileID: 1841495241}
 --- !u!1 &1140525196
 GameObject:
   m_ObjectHideFlags: 0
@@ -1990,11 +1990,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1160093537}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 17d780c95337b724dac71e86e0422fa4, type: 3}
+  m_Script: {fileID: 11500000, guid: 832a0bea4e9ab7949bc925122954e88b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HP: 100
-  HPSlider: {fileID: 1239690993}
+  health: 100
+  slider: {fileID: 1239690993}
 --- !u!1 &1207116393
 GameObject:
   m_ObjectHideFlags: 0
