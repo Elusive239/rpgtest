@@ -939,6 +939,8 @@ GameObject:
   - component: {fileID: 537843088}
   - component: {fileID: 537843087}
   - component: {fileID: 537843086}
+  - component: {fileID: 537843089}
+  - component: {fileID: 537843090}
   m_Layer: 0
   m_Name: InventoryDisplay
   m_TagString: Untagged
@@ -1000,9 +1002,50 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 341.62207, y: 361.43}
-  m_SizeDelta: {x: -1561.1897, y: -744.8568}
+  m_AnchoredPosition: {x: 277.20996, y: 361.43}
+  m_SizeDelta: {x: -1432.3652, y: -744.8568}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &537843089
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 537843085}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26d4a1a46279b154aa666ab78f16e4fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 11400000, guid: 827983d14b6cd8a47a29ab8186ba5a90, type: 2}
+  itemOptionPrefab: {fileID: 5192283874206211158, guid: 71cc26e3b39148840bccfb8f754a8cc3, type: 3}
+  itemPanel: {fileID: 537843085}
+--- !u!114 &537843090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 537843085}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59f8146938fff824cb5fd77236b75775, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Padding:
+    m_Left: 0
+    m_Right: 0
+    m_Top: 0
+    m_Bottom: 0
+  m_ChildAlignment: 4
+  m_Spacing: 0
+  m_ChildForceExpandWidth: 1
+  m_ChildForceExpandHeight: 1
+  m_ChildControlWidth: 0
+  m_ChildControlHeight: 0
+  m_ChildScaleWidth: 0
+  m_ChildScaleHeight: 0
+  m_ReverseArrangement: 0
 --- !u!1 &919998243
 GameObject:
   m_ObjectHideFlags: 0
