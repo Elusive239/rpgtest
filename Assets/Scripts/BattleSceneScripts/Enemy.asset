@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa2149a6574071e4cabd875c8182293d, type: 3}
   m_Name: Enemy
   m_EditorClassIdentifier: 
-  HP: -5
-  ATK: 10
+  maxHealth: 20
+  currentHealth: 20
+  attackDamage: 10

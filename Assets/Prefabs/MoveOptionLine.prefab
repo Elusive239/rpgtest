@@ -393,7 +393,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2579191221276193289}
         m_TargetAssemblyTypeName: MoveFill, Assembly-CSharp
-        m_MethodName: onOptionSelect
+        m_MethodName: OnOptionSelect
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -418,7 +418,5 @@ MonoBehaviour:
   player: {fileID: 11400000, guid: 827983d14b6cd8a47a29ab8186ba5a90, type: 2}
   enemy: {fileID: 11400000, guid: 7a735771ad3c3d54485df379c7e743d8, type: 2}
   option: {fileID: 6683310634800360770}
-  battleMenu: {fileID: 0}
-  fightMenu: {fileID: 0}
   optionName: {fileID: 9005221973764657273}
   optionVal: {fileID: 5308495030643080296}

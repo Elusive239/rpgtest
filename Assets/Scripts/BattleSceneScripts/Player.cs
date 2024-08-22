@@ -8,19 +8,19 @@ using UnityEngine;
 //Houses player fields and methods, primarily for scriptable object used in combat.
 public class Player : ScriptableObject
 {
-    public int MaxHP;
-    public int HP;
+    public int maxHealth;
+    public int currentHealth;
     public bool priority;
     public Attack[] attacks = new Attack[4];
-    public Item[] items = new Item[1];
+    public ItemSO[] items = new ItemSO[1];
 
-    public void takeDamage(int AtkDamage){
-        HP = HP - AtkDamage;
+    public void TakeDamage(int AtkDamage){
+        currentHealth = currentHealth - AtkDamage;
     }
-    public void heal(int healVal){
-        HP = HP + healVal;
-        if(HP > MaxHP){
-            HP = MaxHP;
+    public void Heal(int healVal){
+        currentHealth = currentHealth + healVal;
+        if(currentHealth > maxHealth){
+            currentHealth = maxHealth;
         }
     }
 }

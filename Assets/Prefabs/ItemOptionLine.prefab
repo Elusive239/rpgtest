@@ -393,7 +393,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 4181432964443338461}
         m_TargetAssemblyTypeName: ItemFill, Assembly-CSharp
-        m_MethodName: onOptionSelect
+        m_MethodName: OnOptionSelect
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

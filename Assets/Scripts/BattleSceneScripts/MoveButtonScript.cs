@@ -25,8 +25,8 @@ public class MoveFill : MonoBehaviour
         }
     }
     //enemy takes damage based on the selection, then player passes priority
-    public void onOptionSelect(){
-        enemy.takeDamage(attack.damage);
+    public void OnOptionSelect(){
+        enemy.TakeDamage(attack.damage);
         player.priority = false;
     }
 }

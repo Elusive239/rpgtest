@@ -283,7 +283,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 219685713}
         m_TargetAssemblyTypeName: BattleManagerScript, Assembly-CSharp
-        m_MethodName: item
+        m_MethodName: Item
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -776,7 +776,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 219685713}
         m_TargetAssemblyTypeName: BattleManagerScript, Assembly-CSharp
-        m_MethodName: itemBack
+        m_MethodName: ItemBack
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1503,7 +1503,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 219685713}
         m_TargetAssemblyTypeName: BattleManagerScript, Assembly-CSharp
-        m_MethodName: playerAttacking
+        m_MethodName: PlayerAttacking
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1636,7 +1636,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 219685713}
         m_TargetAssemblyTypeName: BattleManagerScript, Assembly-CSharp
-        m_MethodName: back
+        m_MethodName: Back
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3418,7 +3418,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 219685713}
         m_TargetAssemblyTypeName: BattleManagerScript, Assembly-CSharp
-        m_MethodName: run
+        m_MethodName: Run
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

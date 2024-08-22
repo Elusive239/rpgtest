@@ -11,20 +11,20 @@ using UnityEngine;
 //a file that houses all the enemy information.
 public class Enemy : ScriptableObject
 {
-    public int MaxHP;
-    public int HP;
-    public int ATK;
-    public Enemy(int hp, int atk){
-        HP = hp;
-        ATK = atk;
+    public int maxHealth;
+    public int currentHealth;
+    public int attackDamage;
+    public Enemy(int currentHealth, int dmg){
+        currentHealth = currentHealth;
+        attackDamage = dmg;
     }
-    public void takeDamage(int atkDamage){
-        HP = HP - atkDamage;
+    public void TakeDamage(int dmg){
+        currentHealth = currentHealth - dmg;
     }
-    public void heal(int healVal){
-        HP = HP + healVal;
-        if(HP > MaxHP){
-            HP = MaxHP;
+    public void Heal(int healVal){
+        currentHealth = currentHealth + healVal;
+        if(currentHealth > maxHealth){
+            currentHealth = maxHealth;
         }
     }
 }

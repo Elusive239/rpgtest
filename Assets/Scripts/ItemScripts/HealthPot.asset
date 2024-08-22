@@ -12,11 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b72ca4c43b98dbd42af4d347592c8879, type: 3}
   m_Name: HealthPot
   m_EditorClassIdentifier: 
-  name: Health Potion
-  healVal: 100
-  dmgVal: 0
-  quantity: 50
-  desc: Heals for 100
-  consumable: 1
-  noEffect: 0
-  poison: 0
+  item:
+    itemName: Health Potion
+    itemDesc: A potion that heals you!
+    itemModValue: 100
+    itemQuantity: 300
+    flags: 5

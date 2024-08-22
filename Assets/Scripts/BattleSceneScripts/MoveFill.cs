@@ -26,7 +26,7 @@ public class MoveButtonScript : MonoBehaviour
     }
     //enemy takes damage based on the selection, then player passes priority
     public void onOptionSelect(){
-        enemy.takeDamage(attack.damage);
+        enemy.TakeDamage(attack.damage);
         player.priority = false;
     }
 }

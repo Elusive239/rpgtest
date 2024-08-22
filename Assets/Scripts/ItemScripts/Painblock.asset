@@ -12,11 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b72ca4c43b98dbd42af4d347592c8879, type: 3}
   m_Name: Painblock
   m_EditorClassIdentifier: 
-  name: Brick
-  healVal: 0
-  dmgVal: 0
-  quantity: 50
-  desc: Does nothing?
-  consumable: 1
-  noEffect: 1
-  poison: 0
+  item:
+    itemName: Paintblock
+    itemDesc: A block of congealed paint.
+    itemModValue: 10000000
+    itemQuantity: 1
+    flags: 8

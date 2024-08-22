@@ -12,11 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b72ca4c43b98dbd42af4d347592c8879, type: 3}
   m_Name: Tomahawk
   m_EditorClassIdentifier: 
-  name: Tomahawk
-  healVal: 0
-  dmgVal: 25
-  quantity: 50
-  desc: Deals 25 to the enemy
-  consumable: 1
-  noEffect: 0
-  poison: 0
+  item:
+    itemName: Tomahawk
+    itemDesc: A throwing weapon.
+    itemModValue: 15
+    itemQuantity: 300000
+    flags: 19
