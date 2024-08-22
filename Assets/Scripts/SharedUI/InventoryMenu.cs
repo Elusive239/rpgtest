@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class InventoryMenu : MonoBehaviour
 {
-    public Player player;
+    public Entity player;
     public GameObject itemOptionPrefab;
     public GameObject itemPanel;
 

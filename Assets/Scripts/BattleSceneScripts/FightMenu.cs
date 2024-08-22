@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FightMenu : MonoBehaviour
 {
-    public Player player;
+    public Entity player;
     public GameObject fightOptionPrefab;
     public GameObject fightPanel;
 

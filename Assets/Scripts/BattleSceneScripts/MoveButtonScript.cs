@@ -6,8 +6,8 @@ using TMPro;
 
 public class MoveFill : MonoBehaviour
 {
-    public Player player;
-    public Enemy enemy;
+    public Entity player;
+    public Entity enemy;
     public GameObject option;
     public TMP_Text optionName;
     public TMP_Text optionVal;

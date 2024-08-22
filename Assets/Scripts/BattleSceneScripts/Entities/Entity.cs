@@ -4,15 +4,14 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [Serializable]
-[CreateAssetMenu(fileName = "Player", menuName = "ScriptableObjects/Player", order = 1)]
-//Houses player fields and methods, primarily for scriptable object used in combat.
-public class Player : ScriptableObject
+[CreateAssetMenu(fileName = "New_Entity", menuName = "ScriptableObjects/Entity", order = 1)]
+public class Entity : ScriptableObject
 {
     public int maxHealth;
     public int currentHealth;
     public bool priority;
-    public Attack[] attacks = new Attack[4];
-    public ItemSO[] items = new ItemSO[1];
+    public Attack[] attacks = new Attack[0];
+    public ItemSO[] items = new ItemSO[0];
 
     public void TakeDamage(int AtkDamage){
         currentHealth = currentHealth - AtkDamage;

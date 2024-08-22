@@ -7,8 +7,8 @@ using UnityEngine.SceneManagement;
 public class BattleManagerScript : MonoBehaviour
 {
     bool passTurn = false;
-    public Player player;
-    public Enemy enemy;
+    public Entity player;
+    public Entity enemy;
     public Slider playerHealthUI;
     public Slider enemyHealthUI;
     public Button openItemMenu;
@@ -72,7 +72,7 @@ public class BattleManagerScript : MonoBehaviour
         
     }
     void EnemyTurn(){
-        player.TakeDamage(enemy.attackDamage);
+        player.TakeDamage(enemy.attacks[0].damage);
         MoveSlider(playerHealthUI, player.currentHealth);
         passTurn = false;
         battleMenu.SetActive(true);

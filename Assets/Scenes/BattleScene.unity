@@ -413,8 +413,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 355e5d77e283cad41aca829079b35dcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 11400000, guid: 827983d14b6cd8a47a29ab8186ba5a90, type: 2}
-  enemy: {fileID: 11400000, guid: 7a735771ad3c3d54485df379c7e743d8, type: 2}
+  player: {fileID: 11400000, guid: 4fab55e2f62fa074e8a8208fd031ee59, type: 2}
+  enemy: {fileID: 11400000, guid: b78e846b07ecc664b8c983c83254ce41, type: 2}
   playerHealthUI: {fileID: 1239690993}
   enemyHealthUI: {fileID: 1841495241}
   openItemMenu: {fileID: 63565581}
@@ -1382,7 +1382,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e96b2bdaa2807d947af4b235842b50b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 11400000, guid: 827983d14b6cd8a47a29ab8186ba5a90, type: 2}
+  player: {fileID: 11400000, guid: 4fab55e2f62fa074e8a8208fd031ee59, type: 2}
   itemOptionPrefab: {fileID: 6598502357848344161, guid: c3f228e667c34eb418ce2f9cff1d830b, type: 3}
   itemPanel: {fileID: 553700642}
 --- !u!1 &588293784
@@ -2120,7 +2120,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcc479fbb33409c4583b8a7b4b2c42d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 11400000, guid: 827983d14b6cd8a47a29ab8186ba5a90, type: 2}
+  player: {fileID: 11400000, guid: 4fab55e2f62fa074e8a8208fd031ee59, type: 2}
   fightOptionPrefab: {fileID: 6683310634800360770, guid: 44f0f2bb716c7954188b9717c9b0d8b7, type: 3}
   fightPanel: {fileID: 1217901358}
 --- !u!114 &1217901361

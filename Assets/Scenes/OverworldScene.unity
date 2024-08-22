@@ -1043,7 +1043,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e96b2bdaa2807d947af4b235842b50b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 11400000, guid: 827983d14b6cd8a47a29ab8186ba5a90, type: 2}
+  player: {fileID: 11400000, guid: 4fab55e2f62fa074e8a8208fd031ee59, type: 2}
   itemOptionPrefab: {fileID: 5192283874206211158, guid: 71cc26e3b39148840bccfb8f754a8cc3, type: 3}
   itemPanel: {fileID: 537843085}
 --- !u!1 &919998243
