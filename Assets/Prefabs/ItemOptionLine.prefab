@@ -280,7 +280,7 @@ GameObject:
   - component: {fileID: 4070730393337915673}
   - component: {fileID: 4489984097568499466}
   - component: {fileID: 2851801728135300421}
-  - component: {fileID: 4181432964443338461}
+  - component: {fileID: 5247676585031094770}
   m_Layer: 5
   m_Name: ItemOptionLine
   m_TagString: Untagged
@@ -391,8 +391,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4181432964443338461}
-        m_TargetAssemblyTypeName: ItemFill, Assembly-CSharp
+      - m_Target: {fileID: 5247676585031094770}
+        m_TargetAssemblyTypeName: UseItemButton, Assembly-CSharp
         m_MethodName: OnOptionSelect
         m_Mode: 1
         m_Arguments:
@@ -403,7 +403,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &4181432964443338461
+--- !u!114 &5247676585031094770
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -412,7 +412,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6598502357848344161}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4160e977996b6e049a56e7cfcfa4f5a7, type: 3}
+  m_Script: {fileID: 11500000, guid: 7cf0e446fd41b4745bab7aaf6701f207, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 11400000, guid: 827983d14b6cd8a47a29ab8186ba5a90, type: 2}

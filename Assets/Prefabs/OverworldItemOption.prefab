@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 430157132697418535}
   - component: {fileID: 3609750528477872417}
   - component: {fileID: 4414304560394639504}
-  - component: {fileID: 7039597928576652414}
+  - component: {fileID: 925354144586479376}
   m_Layer: 0
   m_Name: OverworldItemOption
   m_TagString: Untagged
@@ -123,9 +123,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7039597928576652414}
-        m_TargetAssemblyTypeName: OverworldItemScript, Assembly-CSharp
-        m_MethodName: onOptionSelect
+      - m_Target: {fileID: 925354144586479376}
+        m_TargetAssemblyTypeName: UseItemButton, Assembly-CSharp
+        m_MethodName: OnOptionSelect
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -135,7 +135,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &7039597928576652414
+--- !u!114 &925354144586479376
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -144,12 +144,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 5192283874206211158}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 314ba1f282f95c34c894e3dd231ebf58, type: 3}
+  m_Script: {fileID: 11500000, guid: 7cf0e446fd41b4745bab7aaf6701f207, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 11400000, guid: 827983d14b6cd8a47a29ab8186ba5a90, type: 2}
+  enemy: {fileID: 0}
   option: {fileID: 5192283874206211158}
-  optionButton: {fileID: 4414304560394639504}
   optionName: {fileID: 8009436570136750999}
   optionVal: {fileID: 8075279036214589194}
 --- !u!1 &6954265762852745669

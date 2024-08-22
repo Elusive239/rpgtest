@@ -4,14 +4,14 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class ItemFill : MonoBehaviour
+public class UseItemButton : MonoBehaviour
 {
     public Player player;
-    public Enemy enemy;
+    public Enemy? enemy;
     public GameObject option;
     public TMP_Text optionName;
     public TMP_Text optionVal;
-    ItemSO selectedItem ;
+    ItemSO selectedItem;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,13 +19,15 @@ public class ItemFill : MonoBehaviour
         foreach(ItemSO i in player.items){
             if(i.item.itemName == option.name){
                 selectedItem = i;
-                optionName.text = i.item.itemName;
-                optionVal.text = i.item.itemDesc + "";
+                optionName.text = selectedItem.item.itemName;
+                optionVal.text = selectedItem.item.itemDesc + "";
+                if(!selectedItem.item.CheckFlag(ItemFlag.CONSUMABLE)){
+                    GetComponentInChildren<Button>().interactable = false;
+                }
+                break;
             }
         }
     }
-    //enemy takes damage based on the selection, then player passes priority
-
 
     public void OnOptionSelect(){
         
@@ -34,7 +36,7 @@ public class ItemFill : MonoBehaviour
             return;
         }
 
-        if(selectedItem.item.CheckFlag(ItemFlag.DAMAGING)){
+        if(selectedItem.item.CheckFlag(ItemFlag.DAMAGING) && enemy != null){
             if(selectedItem.item.CheckFlag(ItemFlag.THROWABLE))
                 enemy.TakeDamage(selectedItem.item.itemModValue);
             else {
@@ -43,10 +45,21 @@ public class ItemFill : MonoBehaviour
         }
 
         if(selectedItem.item.CheckFlag(ItemFlag.HEALING)){
-            if(selectedItem.item.CheckFlag(ItemFlag.THROWABLE))
-                enemy.Heal(selectedItem.item.itemModValue);
+            if(selectedItem.item.CheckFlag(ItemFlag.THROWABLE) && enemy != null){
+                if(enemy.currentHealth < enemy.maxHealth)
+                    enemy.Heal(selectedItem.item.itemModValue);
+                else {
+                    player.priority = true;
+                    return;
+                }
+            }
             else {
-                player.Heal(selectedItem.item.itemModValue);
+                if(player.currentHealth < player.maxHealth)
+                    player.Heal(selectedItem.item.itemModValue);
+                else {
+                    player.priority = true;
+                    return;
+                }
             }
         }
 

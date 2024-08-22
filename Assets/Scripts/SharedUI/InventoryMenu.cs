@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ItemMenuScript : MonoBehaviour
+public class InventoryMenu : MonoBehaviour
 {
     public Player player;
     public GameObject itemOptionPrefab;
