@@ -10,14 +10,14 @@ public class InventoryDisplayScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        populateItems();
+        PopulateItems();
     }
 
-    public void populateItems(){
-        foreach(Item i in player.items){
+    public void PopulateItems(){
+        foreach(ItemSO i in player.items){
             GameObject option;
             option = Instantiate(itemOptionPrefab, itemPanel.transform, true);
-            option.name = i.name;
+            option.name = i.item.itemName;
         }
     }
 }
