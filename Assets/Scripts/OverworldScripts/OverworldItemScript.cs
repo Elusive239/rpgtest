@@ -35,18 +35,9 @@ public class OverworldItemScript : MonoBehaviour
 
         if(currentItem.item.CheckFlag(ItemFlag.HEALING) && player.maxHealth < player.currentHealth){
             player.Heal(currentItem.item.itemModValue);
-            int count = 0;
-            foreach(ItemSO i in player.items){
-                if(i.item.itemName == currentItem.item.itemName){
-                    i.item.itemQuantity -= 1;
-                }
-                if(i.item.itemQuantity < 1){
-                    List<ItemSO> itemList = new List<ItemSO>(player.items);
-                    itemList.RemoveAt(count);
-                    player.items = itemList.ToArray();
-                    Destroy(option);
-                }
-                count++;
+            if(!currentItem.item.CheckFlag(ItemFlag.KEY)){
+                int itemQuantity = player.RemoveItem(currentItem.item.itemName);
+                if(itemQuantity == 0) Destroy(option);
             }
         }
     }

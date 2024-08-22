@@ -51,18 +51,9 @@ public class ItemFill : MonoBehaviour
         }
 
         if(!selectedItem.item.CheckFlag(ItemFlag.KEY)){
-            int count = 0;
-            foreach(ItemSO i in player.items){
-                if(i.item.itemName == selectedItem.item.itemName){
-                    i.item.itemQuantity -= 1;
-                }
-                if(i.item.itemQuantity < 1){
-                    List<ItemSO> itemList = new(player.items);
-                    itemList.RemoveAt(count);
-                    player.items = itemList.ToArray();
-                    Destroy(option);
-                }
-                count++;
+            if(!selectedItem.item.CheckFlag(ItemFlag.KEY)){
+                int itemQuantity = player.RemoveItem(selectedItem.item.itemName);
+                if(itemQuantity == 0) Destroy(option);
             }
         }
         player.priority = false;

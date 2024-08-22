@@ -23,4 +23,21 @@ public class Player : ScriptableObject
             currentHealth = maxHealth;
         }
     }
+
+    public int RemoveItem(string itemName){
+        int count = 0;
+        foreach(ItemSO i in items){
+            if(i.item.itemName == itemName){
+                i.item.itemQuantity -= 1;
+                if(i.item.itemQuantity < 1){
+                    List<ItemSO> itemList = new List<ItemSO>(items);
+                    itemList.RemoveAt(count);
+                    items = itemList.ToArray();
+                }
+                return i.item.itemQuantity;
+            }
+            count++;
+        }
+        return 0;
+    }
 }
