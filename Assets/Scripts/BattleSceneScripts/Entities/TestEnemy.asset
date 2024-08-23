@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 134fbb903082535499140f44978a48ac, type: 3}
   m_Name: TestEnemy
   m_EditorClassIdentifier: 
-  maxHealth: 20
-  currentHealth: 20
+  maxHealth: 100
+  currentHealth: -60
   priority: 0
   attacks:
   - {fileID: 11400000, guid: 411c7c472df4e3b48929f4d4781a9286, type: 2}

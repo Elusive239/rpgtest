@@ -4,21 +4,18 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class BattleManagerScript : MonoBehaviour
+public class BattleManager : MonoBehaviour
 {
-    bool passTurn = false;
     public Entity player;
     public Entity enemy;
-    public Slider playerHealthUI;
-    public Slider enemyHealthUI;
+    public EntityInfo playerHealthUI;
+    public EntityInfo enemyHealthUI;
+    public UIPanelBase enemyUI;
+    public UIPanelBase victory;
+    public UIPanelBase defeat;
     public Button openItemMenu;
-    public GameObject battleMenu;
-    public GameObject fightMenu;
-    public GameObject itemMenu;
-    public GameObject victory;
-    public GameObject defeat;
 
-    float timer = 0;
+    // float timer = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,9 +24,8 @@ public class BattleManagerScript : MonoBehaviour
         player.priority = true;
         player.currentHealth = player.maxHealth;
         enemy.currentHealth = enemy.maxHealth;
-        playerHealthUI.maxValue = player.maxHealth;
-        playerHealthUI.value = player.currentHealth;
-        enemyHealthUI.maxValue = enemy.currentHealth;
+        playerHealthUI.SetEntity(player);
+        enemyHealthUI.SetEntity(enemy);
         CheckEmptyInventory();
     }
 
@@ -39,14 +35,15 @@ public class BattleManagerScript : MonoBehaviour
 
         //If player has no remaining currentHealth, end the game.
         if(player.currentHealth <= 0){
-            battleMenu.SetActive(false);
-            defeat.SetActive(true);
-            StartCoroutine("TransitionToMainMenu", 3.5f);
+            EndCombat(false);
+            // UIManager.Instance.Clear();
+            // UIManager.Instance.Show(defeat);
+            // StartCoroutine("TransitionToMainMenu", 3.5f);
         }
 
         //If the fightMenu is gone and the player no longer has priority, the enemy takes their turn.
         //If the enemy has no currentHealth remaining, end the encounter.
-        if(fightMenu.activeInHierarchy == false && itemMenu.activeInHierarchy == false){  
+        if(UIManager.Instance.IsStart()){  
             if(enemy.currentHealth > 0){
                 if(player.priority == false){
                     EnemyTurn();
@@ -55,45 +52,36 @@ public class BattleManagerScript : MonoBehaviour
             }
             //TODO: Should change scene Back to the overworld.
             else{
-                victory.SetActive(true);
-                battleMenu.SetActive(false);
-                StartCoroutine("TransitionToOverworld", 3.5f);
+                EndCombat(true);
             }
         }
         //If the player has moved, set the enemy's health bar and disable the fightMenu or itemMenu
         if(player.priority == false){
-            Debug.Log(itemMenu.activeInHierarchy);
-            fightMenu.SetActive(false);
-            itemMenu.SetActive(false);
+            //Debug.Log(itemMenu.activeInHierarchy);
+            UIManager.Instance.Hide();
             CheckEmptyInventory();
-            MoveSlider(enemyHealthUI, enemy.currentHealth);
+            enemyHealthUI.UpdateSlider();
         }
         
     }
-    void EnemyTurn(){
-        player.TakeDamage(enemy.attacks[0].damage);
-        MoveSlider(playerHealthUI, player.currentHealth);
-        passTurn = false;
-        battleMenu.SetActive(true);
-        Debug.Log(player.currentHealth);
+    void EndCombat(bool won){
+        UIManager.Instance.Clear();
+        enemyUI.Hide();
+        if(won){
+            UIManager.Instance.Show(victory);
+            StartCoroutine("TransitionToOverworld", 3.5f);
+        }else{
+            UIManager.Instance.Show(defeat);
+            StartCoroutine("TransitionToMainMenu", 3.5f);
+        }
+    }
 
+    void EnemyTurn(){
+        UIManager.Instance.Hide();
+        player.TakeDamage(enemy.attacks[0].attackDamage);
+        playerHealthUI.UpdateSlider();
     }
-    public void PlayerAttacking(){
-        battleMenu.SetActive(false);
-        fightMenu.SetActive(true);
-    }
-    public void Item(){
-        battleMenu.SetActive(false);
-        itemMenu.SetActive(true);
-    }
-    public void ItemBack(){
-        itemMenu.SetActive(false);
-        battleMenu.SetActive(true);
-    }   
-    public void Back(){
-        fightMenu.SetActive(false);
-        battleMenu.SetActive(true);
-    }
+
     public void Run(){
         float escape = Random.Range(1, 100);
         if(escape < 51){
@@ -102,12 +90,10 @@ public class BattleManagerScript : MonoBehaviour
         else{
             Debug.Log("Escape failed");
             player.priority = false;
+            UIManager.Instance.Hide();
         }
     }
 
-    void MoveSlider(Slider slider, int currentcurrentHealth){
-        slider.value = currentcurrentHealth;
-    }
     IEnumerator TransitionToOverworld(float seconds){
         yield return new WaitForSeconds(seconds);
         SceneManager.LoadScene("OverworldScene");
@@ -122,5 +108,4 @@ public class BattleManagerScript : MonoBehaviour
             openItemMenu.interactable = false;
         }
     }
-    
 }

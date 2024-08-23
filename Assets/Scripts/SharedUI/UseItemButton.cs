@@ -7,7 +7,9 @@ using TMPro;
 public class UseItemButton : MonoBehaviour
 {
     public Entity player;
+    #nullable enable
     public Entity? enemy;
+    #nullable disable
     public GameObject option;
     public TMP_Text optionName;
     public TMP_Text optionVal;

@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0937df37c48174f4bbb9cd8463507067, type: 3}
   m_Name: Attack 4
   m_EditorClassIdentifier: 
-  name: Dual Dickwielding
-  damage: 2000
+  attackName: IT BURNS
+  attackDamage: 60

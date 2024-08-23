@@ -17,16 +17,16 @@ public class MoveFill : MonoBehaviour
     {
         //Find this option and set our text values accordingly
         foreach(Attack i in player.attacks){
-            if(i.name == option.name){
+            if(i.attackName == option.name){
                 attack = i;
-                optionName.text = attack.name;
-                optionVal.text = attack.damage + "";
+                optionName.text = attack.attackName;
+                optionVal.text = attack.attackDamage + "";
             }
         }
     }
     //enemy takes damage based on the selection, then player passes priority
     public void OnOptionSelect(){
-        enemy.TakeDamage(attack.damage);
+        enemy.TakeDamage(attack.attackDamage);
         player.priority = false;
     }
 }
