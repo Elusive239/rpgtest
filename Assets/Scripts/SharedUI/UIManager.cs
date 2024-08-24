@@ -6,6 +6,7 @@ public class UIManager : MonoBehaviour
 {
     public static UIManager Instance { get; private set;}
     public bool closeLast = false;
+    public bool showOnStart = false;
     public UIPanelBase startingPanel = null;
     [SerializeField]
     Stack<UIPanelBase> ui = null;
@@ -13,7 +14,8 @@ public class UIManager : MonoBehaviour
     public void Start(){
         Instance = this;
         Init();
-        Show();
+        if(showOnStart)
+            Show();
     }
 
     public void Init(){
@@ -42,6 +44,7 @@ public class UIManager : MonoBehaviour
 
         ui.Peek().Hide();
         ui.Pop();
+        if(ui.Count > 0 )
         ui.Peek().Show();
     }
 
@@ -63,4 +66,6 @@ public class UIManager : MonoBehaviour
     }
 
     public bool IsStart(){return ui.Count == 1;}
+
+    public static int Count {get{return Instance.ui.Count;}}
 }
