@@ -78,7 +78,7 @@ public class BattleManager : MonoBehaviour
 
     void EnemyTurn(){
         UIManager.Instance.Hide();
-        player.TakeDamage(enemy.attacks[0].attackDamage);
+        player.TakeDamage(enemy.attacks[0]);
         playerHealthUI.UpdateSlider();
     }
 

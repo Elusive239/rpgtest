@@ -13,9 +13,14 @@ public class Entity : ScriptableObject
     public Attack[] attacks = new Attack[0];
     public ItemSO[] items = new ItemSO[0];
 
-    public void TakeDamage(int AtkDamage){
-        currentHealth = currentHealth - AtkDamage;
+    public void TakeDamage(Attack atk){
+        currentHealth -= atk.attackDamage;
     }
+
+    public void TakeDamage(int damage){
+        currentHealth -= damage;
+    }
+
     public void Heal(int healVal){
         currentHealth = currentHealth + healVal;
         if(currentHealth > maxHealth){
