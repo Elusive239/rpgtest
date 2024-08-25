@@ -37,6 +37,7 @@ public class OverworldController : MonoBehaviour
         }
         //escape
         if(Input.GetKeyDown("escape")) {
+            Debug.Log("PRESSED ESCAPE");
             if(UIManager.Count == 0){
                 UIManager.Instance.Show();
             }else{

@@ -14,16 +14,14 @@ public class UIManager : MonoBehaviour
     public void Start(){
         Instance = this;
         Init();
-        if(showOnStart)
-            Show();
     }
 
     public void Init(){
         if(ui == null){
-            ui = new Stack<UIPanelBase>(new UIPanelBase[]{startingPanel});
-        }else{
-            ui.Push(startingPanel);
+            ui = new Stack<UIPanelBase>();
         }
+        if(showOnStart)
+            Show();
     }
 
     public void Show(UIPanelBase panel = null){
