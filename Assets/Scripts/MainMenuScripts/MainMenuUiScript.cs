@@ -9,7 +9,6 @@ public class MainMenuUiScript : MonoBehaviour
         SceneManager.LoadScene("OverworldScene");
     }
     public void Quit(){
-        Application.Quit();
+		Application.Quit();
     }
-
 }

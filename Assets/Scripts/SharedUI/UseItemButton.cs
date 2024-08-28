@@ -66,11 +66,10 @@ public class UseItemButton : MonoBehaviour
         }
 
         if(!selectedItem.item.CheckFlag(ItemFlag.KEY)){
-            if(!selectedItem.item.CheckFlag(ItemFlag.KEY)){
-                int itemQuantity = player.RemoveItem(selectedItem.item.itemName);
-                if(itemQuantity == 0) Destroy(option);
-            }
+            int itemQuantity = player.RemoveItem(selectedItem.item.itemName);
+            if(itemQuantity == 0) Destroy(option);
         }
+        
         player.priority = false;
     }
 }

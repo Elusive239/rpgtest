@@ -512,19 +512,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 355755927}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1797658265}
-        m_TargetAssemblyTypeName: PauseUI, Assembly-CSharp
-        m_MethodName: inventory
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &355755927
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -573,8 +561,8 @@ GameObject:
   m_Component:
   - component: {fileID: 388029296}
   - component: {fileID: 388029297}
-  - component: {fileID: 388029298}
   - component: {fileID: 388029299}
+  - component: {fileID: 388029300}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -649,26 +637,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &388029298
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 388029295}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6ec1e3d792ecc2e47acee007688c9503, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  movSpeed: 8
-  encounterRate: 33
-  gracePeriod: 15
-  player: {fileID: 388029296}
-  upper: {fileID: 510059657}
-  lower: {fileID: 92516523}
-  left: {fileID: 2084851789}
-  right: {fileID: 1965325321}
 --- !u!61 &388029299
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -714,6 +682,27 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &388029300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 388029295}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8199fe35513d10c44b2c962ac32290d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movSpeed: 5
+  encounterRate: 0.2
+  upper: {fileID: 510059657}
+  lower: {fileID: 92516523}
+  left: {fileID: 2084851789}
+  right: {fileID: 1965325321}
+  isMoving: 0
+  timer: 0
+  gracePeriod: 12
 --- !u!1 &450732875
 GameObject:
   m_ObjectHideFlags: 0
@@ -941,6 +930,7 @@ GameObject:
   - component: {fileID: 537843086}
   - component: {fileID: 537843090}
   - component: {fileID: 537843091}
+  - component: {fileID: 537843092}
   m_Layer: 0
   m_Name: InventoryDisplay
   m_TagString: Untagged
@@ -1002,7 +992,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 277.20996, y: 361.43}
+  m_AnchoredPosition: {x: 707.74, y: 361.43}
   m_SizeDelta: {x: -1432.3652, y: -744.8568}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &537843090
@@ -1046,6 +1036,20 @@ MonoBehaviour:
   player: {fileID: 11400000, guid: 4fab55e2f62fa074e8a8208fd031ee59, type: 2}
   itemOptionPrefab: {fileID: 5192283874206211158, guid: 71cc26e3b39148840bccfb8f754a8cc3, type: 3}
   itemPanel: {fileID: 537843085}
+--- !u!114 &537843092
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 537843085}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddd62f8c8c285034db878965316b2694, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  panels: []
+  nextButton: []
 --- !u!1 &919998243
 GameObject:
   m_ObjectHideFlags: 0
@@ -1058,6 +1062,7 @@ GameObject:
   - component: {fileID: 919998247}
   - component: {fileID: 919998246}
   - component: {fileID: 919998245}
+  - component: {fileID: 919998248}
   m_Layer: 0
   m_Name: Close
   m_TagString: Untagged
@@ -1128,19 +1133,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 919998246}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1797658265}
-        m_TargetAssemblyTypeName: PauseUI, Assembly-CSharp
-        m_MethodName: back
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &919998246
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1179,6 +1172,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 919998243}
   m_CullTransparentMesh: 1
+--- !u!114 &919998248
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919998243}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff64a02a28da240468476f5a8c459e94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &966046904
 GameObject:
   m_ObjectHideFlags: 0
@@ -1482,7 +1487,7 @@ GameObject:
   - component: {fileID: 1616056352}
   - component: {fileID: 1616056351}
   - component: {fileID: 1616056350}
-  - component: {fileID: 1616056349}
+  - component: {fileID: 1616056354}
   m_Layer: 0
   m_Name: OverworldUI
   m_TagString: Untagged
@@ -1490,20 +1495,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1616056349
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1616056348}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c40799e9cf625e4b8be11ef95c2ce55, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pauseUI: {fileID: 1797658264}
-  inventoryDisplay: {fileID: 537843085}
 --- !u!114 &1616056350
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1588,6 +1579,21 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1616056354
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1616056348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb33ebc564dc88f4e862890b4dd9d0f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  closeLast: 1
+  showOnStart: 0
+  startingPanel: {fileID: 1797658269}
 --- !u!1 &1687302701
 GameObject:
   m_ObjectHideFlags: 0
@@ -1733,7 +1739,7 @@ GameObject:
   - component: {fileID: 1797658268}
   - component: {fileID: 1797658267}
   - component: {fileID: 1797658266}
-  - component: {fileID: 1797658265}
+  - component: {fileID: 1797658269}
   m_Layer: 0
   m_Name: PauseUI
   m_TagString: Untagged
@@ -1741,20 +1747,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
---- !u!114 &1797658265
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1797658264}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3fc821fdbe6647047bd380e24f4a3df2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pauseUI: {fileID: 1797658264}
-  inventoryDisplay: {fileID: 537843085}
 --- !u!114 &1797658266
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1814,6 +1806,22 @@ RectTransform:
   m_AnchoredPosition: {x: 738.8, y: 416}
   m_SizeDelta: {x: -1494.4869, y: -853.9925}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1797658269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1797658264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddd62f8c8c285034db878965316b2694, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  panels:
+  - {fileID: 537843092}
+  nextButton:
+  - {fileID: 355755926}
 --- !u!1 &1965325320
 GameObject:
   m_ObjectHideFlags: 0

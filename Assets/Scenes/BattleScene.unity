@@ -1320,6 +1320,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   closeLast: 0
+  showOnStart: 1
   startingPanel: {fileID: 1757242246}
 --- !u!1 &553700642
 GameObject:
